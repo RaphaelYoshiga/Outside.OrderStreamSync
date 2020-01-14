@@ -1,0 +1,1 @@
+This is a Project demonstrating a SpecFlow setup with .net core
