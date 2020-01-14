@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outside.OrderStreamSync", "Outside.OrderStreamSync.csproj", "{E28C868F-3F36-4DD3-A45A-47A73CD7040B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outside.OrderStreamSync", "Outside.OrderStreamSync\Outside.OrderStreamSync.csproj", "{E28C868F-3F36-4DD3-A45A-47A73CD7040B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outside.OrderStreamSync.Specs", "..\Outside.OrderStreamSync.Specs\Outside.OrderStreamSync.Specs.csproj", "{11FFA485-0E87-49F6-B5FB-43D0E2A6A4F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outside.OrderStreamSync.Specs", "Outside.OrderStreamSync.Specs\Outside.OrderStreamSync.Specs.csproj", "{11FFA485-0E87-49F6-B5FB-43D0E2A6A4F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
