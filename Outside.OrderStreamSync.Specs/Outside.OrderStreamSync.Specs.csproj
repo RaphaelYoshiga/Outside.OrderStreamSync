@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Moq" Version="4.13.1" />
     <PackageReference Include="Shouldly" Version="3.0.2" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.76" />
     <PackageReference Include="SpecFlow.xUnit" Version="3.1.76" />
