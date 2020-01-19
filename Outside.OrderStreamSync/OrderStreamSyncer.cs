@@ -4,13 +4,24 @@ namespace Outside.OrderStreamSync
 {
     public class OrderStreamSyncer
     {
-        public OrderStreamSyncer(ISalesChannelIdQuery salesChannelIdQuery, IOrderPersister orderPersister)
+        private readonly ISalesChannelIdQuery _salesChannelIdQuery;
+        private readonly IBackOfficeOrderFactory _backOfficeOrderFactory;
+        private readonly IOrderPersister _orderPersister;
+
+        public OrderStreamSyncer(ISalesChannelIdQuery salesChannelIdQuery, 
+            IBackOfficeOrderFactory backOfficeOrderFactory,
+            IOrderPersister orderPersister)
         {
+            _orderPersister = orderPersister;
+            _backOfficeOrderFactory = backOfficeOrderFactory;
+            _salesChannelIdQuery = salesChannelIdQuery;
         }
 
-        public Task Sync(OrderMessage orderMessage)
+        public async Task Sync(OrderMessage orderMessage)
         {
-            return Task.CompletedTask;;
+            var salesChannelId = await _salesChannelIdQuery.GetIdBy(orderMessage.SalesChannel);
+            var backOfficeOrder = _backOfficeOrderFactory.InstantiateFrom(orderMessage, salesChannelId);
+            await _orderPersister.Persist(backOfficeOrder);
         }
     }
 }

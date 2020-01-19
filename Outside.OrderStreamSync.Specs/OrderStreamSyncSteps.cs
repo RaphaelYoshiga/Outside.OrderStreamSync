@@ -17,7 +17,7 @@ namespace Outside.OrderStreamSync.Specs
         {
             _salesChannelQueryMock = new Mock<ISalesChannelIdQuery>();
             _orderPersisterMock = new Mock<IOrderPersister>();
-            _orderStreamSyncer = new OrderStreamSyncer(_salesChannelQueryMock.Object, _orderPersisterMock.Object);
+            _orderStreamSyncer = new OrderStreamSyncer(_salesChannelQueryMock.Object, new BackOfficeOrderFactory(), _orderPersisterMock.Object);
         }
 
         [Given(@"we have this sales channel id (.*) for (.*)")]
