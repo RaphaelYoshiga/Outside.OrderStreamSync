@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Moq;
-using Shouldly;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -40,62 +39,6 @@ namespace Outside.OrderStreamSync.Specs
         {
             var backOfficeOrderExample = table.CreateInstance<BackOfficeOrderExample>();
             _orderPersisterMock.Verify(p => p.Persist(It.Is<BackOfficeOrder>(actualOrder => backOfficeOrderExample.Matches(actualOrder))));
-        }
-    }
-
-    public class OrderStreamSyncer
-    {
-        public OrderStreamSyncer(ISalesChannelIdQuery salesChannelIdQuery, IOrderPersister orderPersister)
-        {
-        }
-
-        public Task Sync(OrderMessage orderMessage)
-        {
-            return Task.CompletedTask;;
-        }
-    }
-
-    public class OrderMessage
-    {
-        public string OrderId { get; set; }
-        public string CustomerEmail { get; set; }
-        public string SalesChannel { get; set; }
-        public decimal OrderAmount { get; set; }
-    }
-
-    public interface ISalesChannelIdQuery
-    {
-        Task<int> GetIdBy(string salesChannelDescription);
-    }
-
-    public interface IOrderPersister
-    {
-        Task Persist(BackOfficeOrder backOfficeOrder);
-    }
-
-    public class BackOfficeOrder
-    {
-        public string OrderId { get; set; }
-        public string CustomerEmail { get; set; }
-        public int SalesChannelId { get; set; }
-        public decimal OrderAmount { get; set; }
-    }
-
-    public class BackOfficeOrderExample
-    {
-        public string OrderId { get; set; }
-        public string CustomerEmail { get; set; }
-        public int SalesChannelId { get; set; }
-        public decimal OrderAmount { get; set; }
-
-        public bool Matches(BackOfficeOrder actualOrder)
-        {
-            actualOrder.OrderId.ShouldBe(OrderId);
-            actualOrder.CustomerEmail.ShouldBe(CustomerEmail);
-            actualOrder.SalesChannelId.ShouldBe(SalesChannelId);
-            actualOrder.OrderAmount.ShouldBe(OrderAmount);
-
-            return true;
         }
     }
 }
