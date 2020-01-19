@@ -1,10 +1,8 @@
-using System;
 using System.Threading.Tasks;
 using Moq;
-using Outside.OrderStreamSync;
 using Xunit;
 
-namespace Outside.AtddExamples.UnitTests
+namespace Outside.OrderStreamSync.UnitTests
 {
     public class OrderStreamSyncerShould
     {
@@ -26,7 +24,7 @@ namespace Outside.AtddExamples.UnitTests
         [InlineData("WebSite", 10)]
         public async Task PersistOrderToDatabase(string salesChannel, int salesChannelId)
         {
-            OrderMessage orderMessage = new OrderMessage()
+            OrderMessage orderMessage = new OrderMessage
             {
                 SalesChannel = salesChannel
             };

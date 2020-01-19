@@ -1,8 +1,7 @@
-﻿using Outside.OrderStreamSync;
-using Shouldly;
+﻿using Shouldly;
 using Xunit;
 
-namespace Outside.AtddExamples.UnitTests
+namespace Outside.OrderStreamSync.UnitTests
 {
     public class BackOfficeOrderFactoryShould
     {

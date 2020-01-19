@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outside.OrderStreamSync", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Outside.OrderStreamSync.Specs", "Outside.OrderStreamSync.Specs\Outside.OrderStreamSync.Specs.csproj", "{11FFA485-0E87-49F6-B5FB-43D0E2A6A4F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outside.AtddExamples.UnitTests", "Outside.AtddExamples.UnitTests\Outside.AtddExamples.UnitTests.csproj", "{6250D7E7-5203-4ED0-9408-627E25DD54EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Outside.OrderStreamSync.UnitTests", "Outside.AtddExamples.UnitTests\Outside.OrderStreamSync.UnitTests.csproj", "{6250D7E7-5203-4ED0-9408-627E25DD54EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
